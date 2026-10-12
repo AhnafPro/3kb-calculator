@@ -1,4 +1,4 @@
-<img width="800" height="556" alt="image" src="https://github.com/user-attachments/assets/31f62e53-4a3b-4851-a24e-4cb81aa84a08" /># 3kb-calculator
+# 3kb-calculator
 <img width="1920" height="833" alt="image" src="https://github.com/user-attachments/assets/9a3b22f4-5c02-4640-80ff-920474f186e2" />
 
 ### A modern and cool-looking calculator all in a single line!
