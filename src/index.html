@@ -1,0 +1,84 @@
+<!doctype html>
+<style>
+        body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #A0D7FF;
+            overflow: hidden;
+            
+        }
+        .ca {
+            width: 280px; height: 500px; background-color: #17181af7; border-radius: 28px; overflow: hidden; box-shadow: 0px 0px 4px 0px #0000009d;
+        }
+        .ca:hover {
+            transform: scale(1.02); transition: smooth 2s;
+        }
+        .ke {
+           width: 9vh;
+           height: 9vh; 
+           padding: 4px;
+           border-radius: 10px;
+           background-color: #303136;
+           margin-top: 12px;
+           margin-left: 6px;
+           margin-right: 6px;
+           filter: blur(0.5px);
+           border: none;
+           font-size: 24px;
+           font-family: "Trebuchet MS", sans-serif;
+           transform-origin: top left;
+           transition: transform 0.4s ease-out; 
+        }
+
+        .ke:hover {
+            transform: rotateX(25deg); 
+        }
+</style>
+<div class="ca">
+    <br><br><br><br><br>
+       <center> <input style="font-family: Trebuchet MS, sans-serif; background-color: #0000;color: white;outline: none;border: none;width: 80%; height: 10vh; text-align: right; font-size: 30px;" type="text" id="dp" value="">
+</center>
+        <br>
+        <br><br><br>
+        <center>
+<input style="color: grey; background-color: rgb(81, 80, 80);" class="ke" value="." type="button" onclick="addToDisplay('.')">
+<input style="color: #1E83DF; background-color: #005DB2;" class="ke" value="/" type="button" onclick="addToDisplay('/')">
+<input style="color: #218df2; background-color: #005DB2;" class="ke" value="*" type="button" onclick="addToDisplay('*')">
+<input style="color: #218df2; background-color: #005DB2;" class="ke" value="-" type="button" onclick="addToDisplay('-')">
+<br>
+<input style="color: #2674AB;" class="ke" value="7" type="button" onclick="addToDisplay('7')">
+<input style="color: #2674AB;" class="ke" value="8" type="button" onclick="addToDisplay('8')">
+<input style="color: #2674AB;" class="ke" value="9" type="button" onclick="addToDisplay('9')">
+<input style="color: #218df2; background-color: #005DB2;" class="ke" value="+" type="button" onclick="addToDisplay('+')">
+<br>
+<input style="color: #2674AB;" class="ke" value="4" type="button" onclick="addToDisplay('4')">
+<input style="color: #2674AB;" class="ke" value="5" type="button" onclick="addToDisplay('5')">
+<input style="color: #2674AB;" class="ke" value="6" type="button" onclick="addToDisplay('6')">
+<input style="color: rgb(155, 193, 250); background-color: #1991FF;" class="ke" value="=" type="button" onclick="calculate()">
+<br> 
+<input style="color: #2674AB;" class="ke" value="1" type="button" onclick="addToDisplay('1')">
+<input style="color: #2674AB;" class="ke" value="2" type="button" onclick="addToDisplay('2')">
+<input style="color: #2674AB;" class="ke" value="3" type="button" onclick="addToDisplay('3')">
+<input style="color: grey; background-color: rgb(81, 80, 80);" class="ke" value="0" type="button" onclick="addToDisplay('0')">
+  </center>  
+  <div style="width: 100px;height: 100px; border-radius: 100%; background-color: #2079B9; margin-left:68%; margin-top: -520px; filter: blur(30px); "></div>
+    <div style="width: 140px;height: 100px; border-radius: 100%; background-color: #2079B9; margin-left:30%; margin-top: 420px; filter: blur(30px); "></div>
+</div>
+<script>
+    function addToDisplay(value) {
+        document.getElementById('dp').value += value;
+    }
+
+    
+    function calculate() {
+        try {
+            var result = eval(document.getElementById('dp').value);
+            document.getElementById('dp').value = result;
+        } catch (error) {
+            document.getElementById('dp').value = 'Syntax Error';
+        }
+    }
+</script>
+
